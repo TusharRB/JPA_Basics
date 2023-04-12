@@ -32,9 +32,9 @@ public class UserController {
     }
 
     @PutMapping("/updateUser")
-    public String updateUser(@RequestParam("userId") int userId){
+    public String updateUser(@RequestParam("id") Integer id,@RequestParam("name") String name){
 
-        return userService.updateUser(userId);
+        return userService.updateUser(id,name);
     }
     @DeleteMapping("/deleteByUserId")
     public String deleteByUserId(@RequestParam("userId") int userId){

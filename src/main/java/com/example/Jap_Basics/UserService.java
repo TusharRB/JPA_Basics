@@ -28,8 +28,13 @@ public class UserService {
         return userRepository.findById(id).get();
     }
 
-    public String updateUser(int userId){
+    public String updateUser(Integer id , String name){
 
+        User user = userRepository.findById(id).get();
+
+        user.setName(name);
+
+        userRepository.save(user);
 
         return "User Update Successfully";
     }
